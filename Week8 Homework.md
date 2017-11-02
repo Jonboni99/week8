@@ -35,6 +35,27 @@ where (Location like 'Victoria, BC')
 order by reputation DESC
 
 C) Top 5 Victoria developers by accepted answer percentage
-
+	1. nemesv 90.82%
+	2. Alive to Die 89%
+ 	3. Stephen Muecke 83.69%
+	4. Luksprog 81.32%
+	5. Martin R 81.01%
+Code:
+SELECT TOP ##MaxUsers?5##
+        a.OwnerUserId AS [User Link],
+        Count(a.Id) AS [Total Answers],
+        Sum(CASE q.AcceptedAnswerId WHEN a.Id THEN 1 ELSE 0 END) AS [Accepted Answers],  
+        Round(Sum(CASE q.AcceptedAnswerId WHEN a.Id THEN 1 ELSE 0 END) * 100.0 / Count(a.Id), 2) AS [Percentage Accepted],
+        Round(CAST(Sum(CASE q.AcceptedAnswerId WHEN a.Id THEN 1 ELSE 0 END) AS FLOAT) * (CAST(Sum(CASE q.AcceptedAnswerId WHEN a.Id THEN 1 ELSE 0 END) AS FLOAT) / Count(a.Id)), 2) AS Weighting
+FROM    Posts AS a
+   JOIN Posts AS q
+     ON a.ParentId = q.Id
+WHERE
+        q.postTypeId = 1
+    AND a.postTypeId = 2
+GROUP BY
+        a.OwnerUserId
+ORDER BY
+        PercentageAccepted DESC
 
 D) Top 10 Victoria developers by accepted answer percentage on questions with the tag javascript
