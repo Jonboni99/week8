@@ -11,7 +11,7 @@ A) Oldest Victoria Users (Name, Age)
 	8. brandonscript 32
 	9. logan 31
 	10. acorscadden 31
-Code: 
+AA) Code: 
 select DisplayName, age
 from users
 where (Location like 'Victoria, BC')
@@ -28,7 +28,7 @@ B) Top 10 highest reputation users in Victoria (Name, Reputation)
 	8. iamronak 496
 	9. Eric 450
 	10. Bob Warwick 201
-Code:
+BB)Code:
 select DisplayName, reputation
 from users
 where (Location like 'Victoria, BC')
@@ -40,7 +40,7 @@ C) Top 5 Victoria developers by accepted answer percentage
  	3. Stephen Muecke 83.69%
 	4. Luksprog 81.32%
 	5. Martin R 81.01%
-Code:
+CC) Code:
 SELECT TOP ##MaxUsers?5##
         a.OwnerUserId AS [User Link],
         Count(a.Id) AS [Total Answers],
