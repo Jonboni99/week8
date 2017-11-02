@@ -1,6 +1,6 @@
 # week8
 
-A) Oldest Victoria Users
+A) Oldest Victoria Users (Name, Age)
 	1. moutaineer2525 54
 	2. codexmas 46
 	3. Omid Zamani 45
@@ -17,8 +17,22 @@ from users
 where (Location like 'Victoria, BC')
 order by age desc
 
-B) Top 10 highest reputation users in Victoria
-
+B) Top 10 highest reputation users in Victoria (Name, Reputation)
+	1. brandonscript 28442
+	2. logan 2647
+	3. robru 965
+	4. Aliweb 876
+	5. Romanulus 799
+	6. thattyson 548
+	7. Jeffery Guenther 538
+	8. iamronak 496
+	9. Eric 450
+	10. Bob Warwick 201
+Code:
+select DisplayName, reputation
+from users
+where (Location like 'Victoria, BC')
+order by reputation DESC
 
 C) Top 5 Victoria developers by accepted answer percentage
 
