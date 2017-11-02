@@ -14,9 +14,13 @@ A) Oldest Victoria Users (Name, Age)
 	10. acorscadden 31
 
 Code: 
+
 select DisplayName, age
+
 from users
+
 where (Location like 'Victoria, BC')
+
 order by age desc
 
 B) Top 10 highest reputation users in Victoria (Name, Reputation)
@@ -34,8 +38,11 @@ B) Top 10 highest reputation users in Victoria (Name, Reputation)
 
 Code:
 select DisplayName, reputation
+
 from users
+
 where (Location like 'Victoria, BC')
+
 order by reputation DESC
 
 C) Top 5 Victoria developers by accepted answer percentage
