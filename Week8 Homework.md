@@ -1,6 +1,7 @@
 # week8
 
 A) Oldest Victoria Users (Name, Age)
+	
 	1. moutaineer2525 54
 	2. codexmas 46
 	3. Omid Zamani 45
@@ -12,13 +13,14 @@ A) Oldest Victoria Users (Name, Age)
 	9. logan 31
 	10. acorscadden 31
 
-AA) Code: 
+Code: 
 select DisplayName, age
 from users
 where (Location like 'Victoria, BC')
 order by age desc
 
 B) Top 10 highest reputation users in Victoria (Name, Reputation)
+	
 	1. brandonscript 28442
 	2. logan 2647
 	3. robru 965
@@ -30,20 +32,21 @@ B) Top 10 highest reputation users in Victoria (Name, Reputation)
 	9. Eric 450
 	10. Bob Warwick 201
 
-BB)Code:
+Code:
 select DisplayName, reputation
 from users
 where (Location like 'Victoria, BC')
 order by reputation DESC
 
 C) Top 5 Victoria developers by accepted answer percentage
+	
 	1. nemesv 90.82%
 	2. Alive to Die 89%
  	3. Stephen Muecke 83.69%
 	4. Luksprog 81.32%
 	5. Martin R 81.01%
 
-CC) Code:
+Code:
 SELECT TOP ##MaxUsers?5##
         a.OwnerUserId AS [User Link],
         Count(a.Id) AS [Total Answers],
